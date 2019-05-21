@@ -45,30 +45,37 @@ private Canvas miCanvas;
       private void ColeccionFiguras () {
         miCanvas = new Canvas("Figuras Geometricas", 1940, 1280);
         miCanvas.setVisible(true);
-        Random Ran= new Random();
-        int xPos=Ran.nextInt((300)-100);
-        int yPos=Ran.nextInt(800);
+       
         ArrayList<FiguraGeometrica> lista = new ArrayList<>();
         
-        Rectangulo r = new Rectangulo(300., 100., Color.red, 300, 300);
+        Rectangulo r = new Rectangulo(300., 300., Color.red, 300, 300);
         lista.add(r);
-        r = new Rectangulo(150., 150., Color.yellow, 500, 500);
+        r = new Rectangulo(150., 150., Color.DARK_GRAY, r.MoverAleatorio(), r.MoverAleatorio());
         lista.add(r);
-        r = new Rectangulo(50., 75., Color.blue, 800, 800);
+        r = new Rectangulo(75., 75., Color.blue, r.MoverAleatorio(), r.MoverAleatorio());
         lista.add(r);
-        r= new Rectangulo (190.,60.,Color.BLACK,500,600);
+        r= new Rectangulo (190.,190.,Color.CYAN,r.MoverAleatorio(),r.MoverAleatorio());
         lista.add(r);
+        Triangulo t = new Triangulo(200,300,Color.GREEN);
+        lista.add(t);
+        t = new Triangulo(100,50,Color.pink);
+        lista.add(t);
+        
         
         for (FiguraGeometrica f : lista) {
             try {
                 Rectangulo r2 = (Rectangulo) f;
+       //         Triangulo t2 = (Triangulo)f;
                 miCanvas.setColorDeLapiz(r2.getColor());
-                
-                for(int i = 0; i < 100; i ++) {
-            miCanvas.rellenarRectangulo(xPos,yPos,
+        int yPos=r2.getY();
+        int xPos=r2.getX();
+      //  int yPos1=t2.getY();
+      //  int xPos1=t2.getX();
+                for(int i = 0; i < 150; i ++) {
+            miCanvas.rellenarRectangulo(yPos,xPos,
                          r2.getAncho().intValue(), r2.getLargo().intValue());
-            miCanvas.espera(2);
-            miCanvas.borrarRectangulo(xPos,yPos,
+            miCanvas.espera(5);
+            miCanvas.borrarRectangulo(yPos,xPos,
                          r2.getAncho().intValue(), r2.getLargo().intValue());
           
             yPos++;
@@ -77,12 +84,48 @@ private Canvas miCanvas;
             r2.getY();
             r2.getAncho().intValue();
             r2.getLargo().intValue();
+      /*      miCanvas.rellenarTriangulo(r2.getX(),r2.getY(), t.getBase(),t.getAltura());
+            miCanvas.espera(5);
+            miCanvas.borrarTriangulo(r2.getX(),r2.getY(), t.getBase(),t.getAltura());*/
         }
         // luego de moverlo, rellenarlo para que permanezca visible
                 miCanvas.rellenarRectangulo(xPos, yPos,
                          r2.getAncho().intValue(), r2.getLargo().intValue());
                 System.out.println("Lado1 = " + r2.getAncho() + " lado2 = " + r2.getLargo());
             }
+            catch (ClassCastException e) {
+            }
+        }
+        
+        for (FiguraGeometrica f : lista) {
+            try {
+                
+                Triangulo t2 = (Triangulo)f;
+                miCanvas.setColorDeLapiz(t2.getColor());
+        int yPos=t2.getY();
+        int xPos=t2.getX();
+                for(int i = 0; i < 300; i ++) {
+            miCanvas.rellenarTriangulo(yPos,xPos,
+                         t2.getBase(),t2.getAltura());
+            miCanvas.espera(5);
+            miCanvas.borrarTriangulo(yPos,xPos,
+                         t2.getBase(),t2.getAltura());
+          
+            yPos++;
+            xPos++;
+            t2.getX();
+            t2.getY();
+            t2.getBase();
+            t2.getAltura();
+           
+        }
+        // luego de moverlo, rellenarlo para que permanezca visible
+                miCanvas.rellenarTriangulo(xPos, yPos,
+                         t2.getBase(),t2.getAltura());
+            //    System.out.println("Lado1 = " + r2.getAncho() + " lado2 = " + r2.getLargo());
+            }
+               
+          
             catch (ClassCastException e) {
             }
         }
@@ -94,11 +137,11 @@ private Canvas miCanvas;
       
       
 
-    private void GraficarFiguras() {
+/*    private void GraficarFiguras() {
         miCanvas = new Canvas("Figuras Geometricas", 1940, 1280);
        miCanvas.setVisible(true);
        
-}
+}*/
 
    
 }

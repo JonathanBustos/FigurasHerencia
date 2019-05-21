@@ -13,8 +13,8 @@ import java.util.Random;
  * @author Alumno
  */
 public class FiguraGeometrica {
-    private Integer x, y;
-    private Color color;
+    private Integer x, y,Al,col1,col2,col3,col4,col5;
+    private Color color,colorAl,Re;
 
     public FiguraGeometrica (Color color) {
         this.x = 0;
@@ -69,12 +69,38 @@ public class FiguraGeometrica {
     public void setColor(Color color) {
         this.color = color;
     }
-    public void NrosRandom(){
+    public Integer MoverAleatorio(){
           Random Ran =new Random();
        
-          Ran.nextInt(100);
+          setAl((Integer) Ran.nextInt((1200)-300));
+          return getAl();
       }
 
+    /**
+     * @return the Al
+     */
+    public Integer getAl() {
+        return Al;
+    }
+
+    /**
+     * @param Al the Al to set
+     */
+    public void setAl(Integer Al) {
+        this.Al = Al;
+    }
+    public Color ColorAleatorio(){
+        Random Ran1 = new Random();
+        col1=Ran1.nextInt((1)+1);
+        if (col1==1){
+      //      col1=Re;
+        }
+       
+        
+       return Re;
+        
+        
+    }
 
 }
 
