@@ -62,6 +62,8 @@ private Canvas miCanvas;
         lista.add(t);
         
         
+        
+        
         for (FiguraGeometrica f : lista) {
             try {
                 Rectangulo r2 = (Rectangulo) f;
