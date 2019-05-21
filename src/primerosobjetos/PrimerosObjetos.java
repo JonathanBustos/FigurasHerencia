@@ -50,24 +50,27 @@ private Canvas miCanvas;
         int yPos=Ran.nextInt(800);
         ArrayList<FiguraGeometrica> lista = new ArrayList<>();
         
-        Rectangulo r = new Rectangulo(100., 50., Color.red, 300, 300);
+        Rectangulo r = new Rectangulo(300., 100., Color.red, 300, 300);
         lista.add(r);
         r = new Rectangulo(150., 150., Color.yellow, 500, 500);
         lista.add(r);
         r = new Rectangulo(50., 75., Color.blue, 800, 800);
+        lista.add(r);
+        r= new Rectangulo (190.,60.,Color.BLACK,500,600);
         lista.add(r);
         
         for (FiguraGeometrica f : lista) {
             try {
                 Rectangulo r2 = (Rectangulo) f;
                 miCanvas.setColorDeLapiz(r2.getColor());
-                for(int i = 0; i < 300; i ++) {
+                
+                for(int i = 0; i < 100; i ++) {
             miCanvas.rellenarRectangulo(xPos,yPos,
                          r2.getAncho().intValue(), r2.getLargo().intValue());
-            miCanvas.espera(5);
+            miCanvas.espera(2);
             miCanvas.borrarRectangulo(xPos,yPos,
                          r2.getAncho().intValue(), r2.getLargo().intValue());
-      
+          
             yPos++;
             xPos++;
             r2.getX();
@@ -76,7 +79,7 @@ private Canvas miCanvas;
             r2.getLargo().intValue();
         }
         // luego de moverlo, rellenarlo para que permanezca visible
-                miCanvas.rellenarRectangulo(r2.getX(), r2.getY(),
+                miCanvas.rellenarRectangulo(xPos, yPos,
                          r2.getAncho().intValue(), r2.getLargo().intValue());
                 System.out.println("Lado1 = " + r2.getAncho() + " lado2 = " + r2.getLargo());
             }
