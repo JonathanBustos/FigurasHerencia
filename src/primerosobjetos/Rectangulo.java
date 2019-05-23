@@ -5,13 +5,13 @@
  */
 package primerosobjetos;
 import java.awt.Color;
-
 /**
  *
  * @author Alumno
  */
 public class Rectangulo extends FiguraGeometrica{
     private Double largo, ancho;
+    
     
    public Rectangulo (Double l, Double a, Color c) {
         super(c);
@@ -52,4 +52,45 @@ public class Rectangulo extends FiguraGeometrica{
     public Double Superficie () {
         return largo * ancho;
     }
+    public void MoverRectangulo( Canvas miCanvas){
+        
+     miCanvas.setColorDeLapiz(getColor());
+        int yPos=getY();
+        int xPos=getX();
+      //  int yPos1=t2.getY();
+      //  int xPos1=t2.getX();
+                for(int i = 0; i < 300; i ++) {
+            miCanvas.rellenarRectangulo(yPos,xPos,
+                         getAncho().intValue(), getLargo().intValue());
+            miCanvas.espera(5);
+            miCanvas.borrarRectangulo(yPos,xPos,
+                         getAncho().intValue(), getLargo().intValue());
+          
+            getVelocidadY();//REVISAR ESTO DE ACA }
+            getVelocidadX();//}
+            getY();
+            getAncho().intValue();
+            getLargo().intValue();
+            
+      /*      miCanvas.rellenarTriangulo(r2.getX(),r2.getY(), t.getBase(),t.getAltura());
+            miCanvas.espera(5);
+            miCanvas.borrarTriangulo(r2.getX(),r2.getY(), t.getBase(),t.getAltura());*/
+        }
+        // luego de moverlo, rellenarlo para que permanezca visible
+                miCanvas.rellenarRectangulo(xPos, yPos,
+                         getAncho().intValue(), getLargo().intValue());
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

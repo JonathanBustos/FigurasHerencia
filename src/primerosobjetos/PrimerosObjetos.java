@@ -9,8 +9,8 @@ public class PrimerosObjetos {
 private Canvas miCanvas;
 
      public static void main(String[] args) {
-         ArrayList<Integer> nrosaleatorios = new ArrayList<>();
-         Integer valorX=0;
+    //     ArrayList<Integer> nrosaleatorios = new ArrayList<>();
+     //    Integer valorX=0;
  /*       Rectangulo r1 = new Rectangulo(10.0, 15.0, "Negro");
         Rectangulo r2 = new Rectangulo(3.5, 4.5, "Rojo");
         
@@ -65,10 +65,13 @@ private Canvas miCanvas;
         
         
         for (FiguraGeometrica f : lista) {
+            
+            
             try {
                 Rectangulo r2 = (Rectangulo) f;
+                r2.MoverRectangulo( miCanvas);
        //         Triangulo t2 = (Triangulo)f;
-                miCanvas.setColorDeLapiz(r2.getColor());
+  /*              miCanvas.setColorDeLapiz(r2.getColor());
         int yPos=r2.getY();
         int xPos=r2.getX();
       //  int yPos1=t2.getY();
@@ -91,21 +94,25 @@ private Canvas miCanvas;
             miCanvas.borrarTriangulo(r2.getX(),r2.getY(), t.getBase(),t.getAltura());*/
         }
         // luego de moverlo, rellenarlo para que permanezca visible
-                miCanvas.rellenarRectangulo(xPos, yPos,
-                         r2.getAncho().intValue(), r2.getLargo().intValue());
-                System.out.println("Lado1 = " + r2.getAncho() + " lado2 = " + r2.getLargo());
-            }
+   //             miCanvas.rellenarRectangulo(xPos, yPos,
+   //                      r2.getAncho().intValue(), r2.getLargo().intValue());
+    //            System.out.println("Lado1 = " + r2.getAncho() + " lado2 = " + r2.getLargo());
+            
             catch (ClassCastException e) {
+                
             }
         }
+      
+
         
         for (FiguraGeometrica f : lista) {
             try {
                 
                 Triangulo t2 = (Triangulo)f;
-                miCanvas.setColorDeLapiz(t2.getColor());
-        int yPos=t2.getY();
-        int xPos=t2.getX();
+                t2.moverTriangulo(miCanvas);
+   /*             miCanvas.setColorDeLapiz(t2.getColor());
+        int yPos=t2.MoverAleatorio();
+        int xPos=t2.MoverAleatorio();
                 for(int i = 0; i < 300; i ++) {
             miCanvas.rellenarTriangulo(yPos,xPos,
                          t2.getBase(),t2.getAltura());
@@ -127,17 +134,18 @@ private Canvas miCanvas;
             //    System.out.println("Lado1 = " + r2.getAncho() + " lado2 = " + r2.getLargo());
             }
                
-          
+      */    }
             catch (ClassCastException e) {
             }
-        }
+        
 //        Triangulo t2 = (Triangulo)f;
         
 //        System.out.println("Base = " + t2.getBase() + " altura = " + t2.getAltura());
     }
+
       
-      
-      
+}
+}
 
 /*    private void GraficarFiguras() {
         miCanvas = new Canvas("Figuras Geometricas", 1940, 1280);
@@ -146,7 +154,7 @@ private Canvas miCanvas;
 }*/
 
    
-}
+
  /*       miCanvas.setColorDeLapiz(Color.lightGray);
         miCanvas.rellenarRectangulo(300, 300, 100, 50);
 

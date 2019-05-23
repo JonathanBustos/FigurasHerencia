@@ -13,7 +13,7 @@ import java.util.Random;
  * @author Alumno
  */
 public class FiguraGeometrica {
-    private Integer x, y,Al,col1,col2,col3,col4,col5;
+    private Integer x, y,Al,col1,col2,col3,col4,col5,yPos,xPos,movAl1,VelocidadY,VelocidadX;
     private Color color,colorAl,Re;
 
     public FiguraGeometrica (Color color) {
@@ -89,7 +89,7 @@ public class FiguraGeometrica {
     public void setAl(Integer Al) {
         this.Al = Al;
     }
-    public Color ColorAleatorio(){
+  /*  public Color ColorAleatorio(){
         Random Ran1 = new Random();
         col1=Ran1.nextInt((1)+1);
         if (col1==1){
@@ -99,7 +99,54 @@ public class FiguraGeometrica {
         
        return Re;
         
-        
+   
+    }
+    public Integer DireccionAleatoriaVertical(){
+        Random Ran2= new Random();
+        movAl1=Ran2.nextInt((2)+1);
+        if (movAl1==1){
+            movAl1=yPos++;
+        }
+        else {
+            movAl1=yPos--;
+            
+        }
+        return movAl1;
+    }
+*/
+
+    public void Velocidad(){
+        setVelocidadY((Integer) 1);
+        setVelocidadX((Integer) 1);
+         
+    }
+
+    /**
+     * @return the VelocidadY
+     */
+    public Integer getVelocidadY() {
+        return VelocidadY;
+    }
+
+    /**
+     * @param VelocidadY the VelocidadY to set
+     */
+    public void setVelocidadY(Integer VelocidadY) {
+        this.VelocidadY = VelocidadY;
+    }
+
+    /**
+     * @return the VelocidadX
+     */
+    public Integer getVelocidadX() {
+        return VelocidadX;
+    }
+
+    /**
+     * @param VelocidadX the VelocidadX to set
+     */
+    public void setVelocidadX(Integer VelocidadX) {
+        this.VelocidadX = VelocidadX;
     }
 
 }
