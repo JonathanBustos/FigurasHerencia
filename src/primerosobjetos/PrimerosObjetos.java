@@ -48,7 +48,7 @@ private Canvas miCanvas;
        
         ArrayList<FiguraGeometrica> lista = new ArrayList<>();
         
-        Rectangulo r = new Rectangulo(300., 300., Color.red, 300, 300);
+        Rectangulo r = new Rectangulo(300., 300., Color.red,500,500);
         lista.add(r);
         r = new Rectangulo(150., 150., Color.DARK_GRAY, r.MoverAleatorio(), r.MoverAleatorio());
         lista.add(r);

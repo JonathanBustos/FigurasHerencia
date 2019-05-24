@@ -13,7 +13,7 @@ import java.util.Random;
  * @author Alumno
  */
 public class FiguraGeometrica {
-    private Integer x, y,Al,col1,col2,col3,col4,col5,yPos,xPos,movAl1,VelocidadY,VelocidadX;
+    private Integer x, y,Al,col1,col2,col3,col4,col5,yPos,xPos,movAl1,VelocidadY,VelocidadX,velocidadespera;
     private Color color,colorAl,Re;
 
     public FiguraGeometrica (Color color) {
@@ -116,9 +116,18 @@ public class FiguraGeometrica {
 */
 
     public void Velocidad(){
-        setVelocidadY((Integer) 1);
-        setVelocidadX((Integer) 1);
-         
+        Random Ran1 = new Random();
+        setVelocidadX((Integer) Ran1.nextInt((2)+1));
+        setVelocidadY((Integer) Ran1.nextInt((2)+1));
+        if (getVelocidadX()==2){
+            setVelocidadX( -1);
+        }
+        
+        
+        if (getVelocidadY()==2){
+            setVelocidadY( -1);
+        }
+       
     }
 
     /**
@@ -149,5 +158,10 @@ public class FiguraGeometrica {
         this.VelocidadX = VelocidadX;
     }
 
+    public Integer VelEspera(){
+    Random R2=new Random();
+    velocidadespera=R2.nextInt((10)+1);
+    return velocidadespera;
+}
 }
 

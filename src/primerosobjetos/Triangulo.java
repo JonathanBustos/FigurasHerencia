@@ -55,17 +55,18 @@ public class Triangulo extends FiguraGeometrica {
     
     public void moverTriangulo(Canvas miCanvas){
         miCanvas.setColorDeLapiz(getColor());
-        int yPos=MoverAleatorio();
-        int xPos=MoverAleatorio();
+        Velocidad();
+        setX(MoverAleatorio());
+        setY(MoverAleatorio());
                 for(int i = 0; i < 300; i ++) {
-            miCanvas.rellenarTriangulo(yPos,xPos,
+            miCanvas.rellenarTriangulo(getX(),getY(),
                          getBase(),getAltura());
             miCanvas.espera(5);
-            miCanvas.borrarTriangulo(yPos,xPos,
+            miCanvas.borrarTriangulo(getX(),getY(),
                          getBase(),getAltura());
           
-            yPos++;
-            xPos++;
+            setX(getX()+getVelocidadX());
+            setY(getY()+getVelocidadY());
             getX();
             getY();
             getBase();
@@ -73,7 +74,7 @@ public class Triangulo extends FiguraGeometrica {
            
         }
         // luego de moverlo, rellenarlo para que permanezca visible
-                miCanvas.rellenarTriangulo(xPos, yPos,
+                miCanvas.rellenarTriangulo(getX(), getY(),
                          getBase(),getAltura());
     }
 

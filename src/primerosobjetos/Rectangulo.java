@@ -53,22 +53,20 @@ public class Rectangulo extends FiguraGeometrica{
         return largo * ancho;
     }
     public void MoverRectangulo( Canvas miCanvas){
-        
+        Velocidad();
      miCanvas.setColorDeLapiz(getColor());
-        int yPos=getY();
-        int xPos=getX();
+        
       //  int yPos1=t2.getY();
       //  int xPos1=t2.getX();
                 for(int i = 0; i < 300; i ++) {
-            miCanvas.rellenarRectangulo(yPos,xPos,
+            miCanvas.rellenarRectangulo(getX(),getY(),
                          getAncho().intValue(), getLargo().intValue());
-            miCanvas.espera(5);
-            miCanvas.borrarRectangulo(yPos,xPos,
+            miCanvas.espera(VelEspera());
+            miCanvas.borrarRectangulo(getX(),getY(),
                          getAncho().intValue(), getLargo().intValue());
           
-            getVelocidadY();//REVISAR ESTO DE ACA }
-            getVelocidadX();//}
-            getY();
+            setX(getX()+getVelocidadX());
+            setY(getY()+getVelocidadY());
             getAncho().intValue();
             getLargo().intValue();
             
@@ -77,7 +75,7 @@ public class Rectangulo extends FiguraGeometrica{
             miCanvas.borrarTriangulo(r2.getX(),r2.getY(), t.getBase(),t.getAltura());*/
         }
         // luego de moverlo, rellenarlo para que permanezca visible
-                miCanvas.rellenarRectangulo(xPos, yPos,
+                miCanvas.rellenarRectangulo(getX(), getY(),
                          getAncho().intValue(), getLargo().intValue());
 }
 
