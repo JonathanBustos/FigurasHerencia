@@ -12,7 +12,7 @@ import java.util.Random;
  *
  * @author Alumno
  */
-public class FiguraGeometrica {
+public abstract class FiguraGeometrica {
     private Integer x, y,Al,col1,col2,col3,col4,col5,yPos,xPos,movAl1,VelocidadY,VelocidadX,velocidadespera;
     private Color color,colorAl,Re;
 
@@ -163,5 +163,6 @@ public class FiguraGeometrica {
     velocidadespera=R2.nextInt((10)+1);
     return velocidadespera;
 }
+    public abstract void mover (Canvas c, Integer destX, Integer destY);
 }
 

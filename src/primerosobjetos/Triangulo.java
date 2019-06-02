@@ -53,7 +53,7 @@ public class Triangulo extends FiguraGeometrica {
      * @return the color
      */
     
-    public void moverTriangulo(Canvas miCanvas){
+ /*   public void moverTriangulo(Canvas miCanvas){
         miCanvas.setColorDeLapiz(getColor());
         Velocidad();
         setX(MoverAleatorio());
@@ -77,8 +77,36 @@ public class Triangulo extends FiguraGeometrica {
                 miCanvas.rellenarTriangulo(getX(), getY(),
                          getBase(),getAltura());
     }
-
-
+*/
+    public void mover (Canvas c, Integer destX, Integer destY) {
+        Integer dx = 0, dy = 0;
+        if (destX > getX()) {
+            dx = 1;
+        }
+        if (destX < getX()) {
+            dx = -1;
+        }
+        if (destY > getY()) {
+            dy = 1;
+        }
+        if (destY < getY()) {
+            dy = -1;
+        }
+        
+        c.setColorDeLapiz(getColor());
+        for (Integer i = 0; i < 50; i = i+1) {
+            c.rellenarTriangulo(getX(), getY(), altura, base);
+            c.espera(50);
+            c.borrarTriangulo(getX(), getY(), altura, base);          
+            setX(getX()+dx);
+            setY(getY()+dy);
+        }
+        c.rellenarTriangulo(getX(), getY(), altura, base);
+        
+    }
+    public void MoverunLugar(){
+    
+}
 
 
 

@@ -52,7 +52,7 @@ public class Rectangulo extends FiguraGeometrica{
     public Double Superficie () {
         return largo * ancho;
     }
-    public void MoverRectangulo( Canvas miCanvas){
+  /*  public void MoverRectangulo( Canvas miCanvas){
         Velocidad();
      miCanvas.setColorDeLapiz(getColor());
         
@@ -72,11 +72,39 @@ public class Rectangulo extends FiguraGeometrica{
             
       /*      miCanvas.rellenarTriangulo(r2.getX(),r2.getY(), t.getBase(),t.getAltura());
             miCanvas.espera(5);
-            miCanvas.borrarTriangulo(r2.getX(),r2.getY(), t.getBase(),t.getAltura());*/
+            miCanvas.borrarTriangulo(r2.getX(),r2.getY(), t.getBase(),t.getAltura());
         }
         // luego de moverlo, rellenarlo para que permanezca visible
                 miCanvas.rellenarRectangulo(getX(), getY(),
-                         getAncho().intValue(), getLargo().intValue());
+                         getAncho().intValue(), getLargo().intValue());*/
+public void mover (Canvas c, Integer destX, Integer destY) {
+        Integer dx = 0, dy = 0;
+        if (destX > getX()) {
+            dx = 1;
+        }
+        if (destX < getX()) {
+            dx = -1;
+        }
+        if (destY > getY()) {
+            dy = 1;
+        }
+        if (destY < getY()) {
+            dy = -1;
+        }
+        
+        c.setColorDeLapiz(getColor());
+        for (Integer i = 0; i < 50; i = i+1) {
+            c.rellenarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());
+            c.espera(50);
+            c.borrarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());            
+            setX(getX()+dx);
+            setY(getY()+dy);
+        }
+        c.rellenarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());
+        
+    }
+public void MoverunLugar(){
+    
 }
 
 
