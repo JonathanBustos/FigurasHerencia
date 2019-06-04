@@ -13,7 +13,8 @@ import java.util.Random;
  * @author Alumno
  */
 public abstract class FiguraGeometrica {
-    private Integer x, y,Al,col1,col2,col3,col4,col5,yPos,xPos,movAl1,VelocidadY,VelocidadX,velocidadespera;
+    private Integer x, y,Al,yPos,xPos,movAl1,VelocidadY,VelocidadX,velocidadespera;
+    private Double destinoX,destinoY;
     private Color color,colorAl,Re;
 
     public FiguraGeometrica (Color color) {
@@ -163,6 +164,55 @@ public abstract class FiguraGeometrica {
     velocidadespera=R2.nextInt((10)+1);
     return velocidadespera;
 }
-    public abstract void mover (Canvas c, Integer destX, Integer destY);
+  //  public abstract void mover (Canvas c, Integer destX, Integer destY);
+    
+    public Double SetdestinoX(){
+        if (destinoX > x.doubleValue()){
+            destinoX+=1;
+        }
+        if (destinoX < x.doubleValue()){
+            destinoX-=1;
+        }
+        
+        return destinoX;
+    }
+    public Double SetdestinoY(){
+        
+        if (destinoY > y.doubleValue()){
+            destinoY+=1;
+        }
+        if (destinoY < y.doubleValue()){
+            destinoY-=1;
+        }
+        return destinoY;
+    }
+
+    public Double getDestinoX() {
+        return destinoX;
+    }
+
+    public void setDestinoX(Double destinoX) {
+        this.destinoX = destinoX;
+    }
+
+    public Double getDestinoY() {
+        return destinoY;
+    }
+
+    public void setDestinoY(Double destinoY) {
+        this.destinoY = destinoY;
+    }
+    
+    public abstract void MoverunLugar(Canvas c);
+    
+    public void AltualizarPosicion(Integer Posfinal){
+        
+        if (destinoY!=y.doubleValue())
+            MoverunLugar(miCanvas);
+        
+    }
+        
+        
+    
 }
 

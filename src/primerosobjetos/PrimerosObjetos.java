@@ -70,16 +70,23 @@ private Canvas miCanvas;
         
         Rectangulo r = new Rectangulo(100., 50., Color.red, 300, 300);
         lista.add(r);
-//        Triangulo t = new Triangulo( 100., 200., Color.green, 400, 0);
-//        lista.add(t);
+        Triangulo t = new Triangulo( 100, 200, Color.green);
+        lista.add(t);
+        t = new Triangulo(150,80,Color.pink);
+        lista.add(t);
+        t = new Triangulo(180,120,Color.black);
+        lista.add(t);
         r = new Rectangulo(150., 150., Color.yellow, 200, 200);
         lista.add(r);
         r = new Rectangulo(50., 75., Color.blue, 100, 100);
         lista.add(r);
         
         for (FiguraGeometrica f : lista) {
-            f.mover(miCanvas, valor.nextInt(300)+50, valor.nextInt(300)+50);
-        }
+            for(int i=0;i>,i++){
+                
+           
+            f.MoverunLugar(miCanvas);
+        }}
       }
         
         

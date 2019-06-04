@@ -43,7 +43,7 @@ public Double Superficie(){
 public Double Perimetro(){
     return 3.14 * diametro;
 }
-public void mover (Canvas c, Integer destX, Integer destY) {
+/*public void mover (Canvas c, Integer destX, Integer destY) {
         Integer dx = 0, dy = 0;
         if (destX > getX()) {
             dx = 1;
@@ -68,8 +68,15 @@ public void mover (Canvas c, Integer destX, Integer destY) {
         }
         c.rellenarCirculo(getX(), getY(), diametro.intValue());
         
-    }
-    public void MoverunLugar(){
-    
+    }*/
+        @Override
+    public void MoverunLugar(Canvas c){
+    c.setColorDeLapiz(getColor());
+        
+            c.rellenarCirculo(getX(), getY(), diametro);
+            c.espera(20);
+            c.rellenarCirculo(getX(), getY(), diametro);
+            setX(getX()+getDestinoX().intValue());
+            setY(getY()+getDestinoY().intValue());
 }
 }

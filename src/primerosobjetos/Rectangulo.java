@@ -77,7 +77,7 @@ public class Rectangulo extends FiguraGeometrica{
         // luego de moverlo, rellenarlo para que permanezca visible
                 miCanvas.rellenarRectangulo(getX(), getY(),
                          getAncho().intValue(), getLargo().intValue());*/
-public void mover (Canvas c, Integer destX, Integer destY) {
+/*public void mover (Canvas c, Integer destX, Integer destY) {
         Integer dx = 0, dy = 0;
         if (destX > getX()) {
             dx = 1;
@@ -102,21 +102,15 @@ public void mover (Canvas c, Integer destX, Integer destY) {
         }
         c.rellenarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());
         
-    }
-public void MoverunLugar(){
-    
+    }*/
+        @Override
+    public void MoverunLugar(Canvas c){
+    c.setColorDeLapiz(getColor());
+        
+            c.rellenarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());
+            c.espera(20);
+            c.borrarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());
+            setX(getX()+getDestinoX().intValue());
+            setY(getY()+getDestinoY().intValue());
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -1,0 +1,11 @@
+
+
+Hacer que la figura se mueva un lugar y se actualice constantemente CADA CLASE - SUPER CLASE
+
+
+
+Hacer metodo que decida la posicion a donde se va a ir (SET DESTINO) - SUPER CLASE
+
+
+
+Hacer un metodo que sea para pintar y borrar la figura hasta que llegue a destino - SUPER CLASE
