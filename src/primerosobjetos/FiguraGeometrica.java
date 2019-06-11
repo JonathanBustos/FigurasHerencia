@@ -13,7 +13,7 @@ import java.util.Random;
  * @author Alumno
  */
 public abstract class FiguraGeometrica {
-    private Integer x, y,Al,yPos,xPos,movAl1,VelocidadY,VelocidadX,velocidadespera;
+    private Integer x, y,Al,yPos,xPos,movAl1,VelocidadY,VelocidadX,velocidadespera,dx,dy,destX,destY;
     private Double destinoX,destinoY;
     private Color color,colorAl,Re;
 
@@ -166,53 +166,39 @@ public abstract class FiguraGeometrica {
 }
   //  public abstract void mover (Canvas c, Integer destX, Integer destY);
     
-    public Double SetdestinoX(){
-        if (destinoX > x.doubleValue()){
-            destinoX+=1;
-        }
-        if (destinoX < x.doubleValue()){
-            destinoX-=1;
-        }
+    public void setDestino(Integer destX,Integer destY){
+        Random r = new Random();
+        destX =r.nextInt((500)+100);
+        destY =r.nextInt((500)+100);
         
-        return destinoX;
-    }
-    public Double SetdestinoY(){
-        
-        if (destinoY > y.doubleValue()){
-            destinoY+=1;
+        if (destX > getX()) {
+            dx = 1;
         }
-        if (destinoY < y.doubleValue()){
-            destinoY-=1;
+        if (destX < getX()) {
+            dx = -1;
         }
-        return destinoY;
+        if (destY > getY()) {
+            dy = 1;
+        }
+        if (destY < getY()) {
+            dy = -1;
     }
-
-    public Double getDestinoX() {
-        return destinoX;
     }
-
-    public void setDestinoX(Double destinoX) {
-        this.destinoX = destinoX;
-    }
-
-    public Double getDestinoY() {
-        return destinoY;
-    }
-
-    public void setDestinoY(Double destinoY) {
-        this.destinoY = destinoY;
-    }
-    
     public abstract void MoverunLugar(Canvas c);
     
-    public void AltualizarPosicion(Integer Posfinal){
+    public void ActualizarPosicion(){
+       
+        if (destX!=getX()&&(destY!=getY())){
+            setX(getX()+dx);
+            setY(getX()+dy);
+            
+         
         
-        if (destinoY!=y.doubleValue())
-            MoverunLugar(miCanvas);
-        
-    }
+        }
+    
         
         
     
+}
 }
 

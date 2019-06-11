@@ -73,10 +73,9 @@ public Double Perimetro(){
     public void MoverunLugar(Canvas c){
     c.setColorDeLapiz(getColor());
         
+            c.borrarCirculo(getX(), getY(), diametro);
+            ActualizarPosicion();
             c.rellenarCirculo(getX(), getY(), diametro);
-            c.espera(20);
-            c.rellenarCirculo(getX(), getY(), diametro);
-            setX(getX()+getDestinoX().intValue());
-            setY(getY()+getDestinoY().intValue());
+           
 }
 }

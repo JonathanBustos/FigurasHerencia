@@ -14,8 +14,8 @@ public class Triangulo extends FiguraGeometrica {
     
    // private String color;
     
-    public Triangulo (int base, int altura, Color c) {
-        super(c);
+    public Triangulo (int base, int altura, Color c,int x,int y) {
+        super(x,y,c);
         this.base = base;
         this.altura = altura;
         
@@ -106,13 +106,13 @@ public class Triangulo extends FiguraGeometrica {
     } */ 
     @Override
     public void MoverunLugar(Canvas c){
+
     c.setColorDeLapiz(getColor());
         
+            c.borrarTriangulo(getX(), getY(), altura, base);
+            ActualizarPosicion();
             c.rellenarTriangulo(getX(), getY(), altura, base);
-            c.espera(20);
-            c.borrarTriangulo(getX(), getY(), altura, base);          
-            setX(getX()+getDestinoX().intValue());
-            setY(getY()+getDestinoY().intValue());
+            
 }
 
 

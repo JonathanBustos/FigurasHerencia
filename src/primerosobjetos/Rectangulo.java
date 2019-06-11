@@ -107,10 +107,10 @@ public class Rectangulo extends FiguraGeometrica{
     public void MoverunLugar(Canvas c){
     c.setColorDeLapiz(getColor());
         
-            c.rellenarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());
-            c.espera(20);
+            
             c.borrarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());
-            setX(getX()+getDestinoX().intValue());
-            setY(getY()+getDestinoY().intValue());
+            ActualizarPosicion();
+            c.rellenarRectangulo(getX(), getY(), largo.intValue(), ancho.intValue());
+           
 }
 }

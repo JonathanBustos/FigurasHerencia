@@ -57,37 +57,38 @@ private Canvas miCanvas;
         lista.add(r);
         r= new Rectangulo (190.,190.,Color.CYAN,r.MoverAleatorio(),r.MoverAleatorio());
         lista.add(r);
-        Triangulo t = new Triangulo(200,300,Color.GREEN);
+        Triangulo t = new Triangulo(200,300,Color.GREEN,950,300);
         lista.add(t);
-        t = new Triangulo(100,50,Color.pink);
+        t = new Triangulo(100,50,Color.pink,560,150);
         lista.add(t);
       }
       private void MoverFiguras () {
-        miCanvas = new Canvas("Figuras Geometricas", 600, 500);
+        miCanvas = new Canvas("Figuras Geometricas", 1940, 1280);
         miCanvas.setVisible(true);
         ArrayList<FiguraGeometrica> lista = new ArrayList<>();
         Random valor = new Random();
-        
+        //PONER DESTINO A CADA OBJETO
         Rectangulo r = new Rectangulo(100., 50., Color.red, 300, 300);
         lista.add(r);
-        Triangulo t = new Triangulo( 100, 200, Color.green);
+        Triangulo t = new Triangulo( 100, 200, Color.green,600,300);
         lista.add(t);
-        t = new Triangulo(150,80,Color.pink);
+        t = new Triangulo(150,80,Color.pink,800,400);
         lista.add(t);
-        t = new Triangulo(180,120,Color.black);
+        t = new Triangulo(180,120,Color.black,450,320);
         lista.add(t);
         r = new Rectangulo(150., 150., Color.yellow, 200, 200);
         lista.add(r);
         r = new Rectangulo(50., 75., Color.blue, 100, 100);
         lista.add(r);
         
-        for (FiguraGeometrica f : lista) {
-            for(int i=0;i>,i++){
-                
-           
-            f.MoverunLugar(miCanvas);
-        }}
+           for(int i = 0 ; i < 900 ; i++){
+             for (FiguraGeometrica f : lista) {
+              f.MoverunLugar(miCanvas);
+              miCanvas.espera(5);
+        }
       }
+      }
+}
         
         
         
@@ -168,7 +169,7 @@ private Canvas miCanvas;
 //        Triangulo t2 = (Triangulo)f;
         
 //        System.out.println("Base = " + t2.getBase() + " altura = " + t2.getAltura());
-    }
+    
 
       
 
