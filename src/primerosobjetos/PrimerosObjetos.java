@@ -70,16 +70,22 @@ private Canvas miCanvas;
         //PONER DESTINO A CADA OBJETO
         Rectangulo r = new Rectangulo(100., 50., Color.red, 300, 300);
         lista.add(r);
+        r.setDestino(250, 350);
         Triangulo t = new Triangulo( 100, 200, Color.green,600,300);
         lista.add(t);
+        t.setDestino(120, 460);
         t = new Triangulo(150,80,Color.pink,800,400);
         lista.add(t);
+        t.setDestino(690, 840);
         t = new Triangulo(180,120,Color.black,450,320);
         lista.add(t);
+        t.setDestino(350, 150);
         r = new Rectangulo(150., 150., Color.yellow, 200, 200);
         lista.add(r);
+        r.setDestino(710, 870);
         r = new Rectangulo(50., 75., Color.blue, 100, 100);
         lista.add(r);
+        r.setDestino(100, 100);
         
            for(int i = 0 ; i < 900 ; i++){
              for (FiguraGeometrica f : lista) {
