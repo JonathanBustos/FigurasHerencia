@@ -167,9 +167,9 @@ public abstract class FiguraGeometrica {
   //  public abstract void mover (Canvas c, Integer destX, Integer destY);
     
     public void setDestino(Integer destX,Integer destY){
-        Random r = new Random();
-        destX =r.nextInt((500)+100);
-        destY =r.nextInt((500)+100);
+        
+        
+        
         
         if (destX > getX()) {
             dx = 1;
@@ -182,15 +182,15 @@ public abstract class FiguraGeometrica {
         }
         if (destY < getY()) {
             dy = -1;
-    }
+        }
     }
     public abstract void MoverunLugar(Canvas c);
     
     public void ActualizarPosicion(){
        
-        if (destX!=getX()&&(destY!=getY())){
+        if ((destX!=getX())&& (destY!=getY())){
             setX(getX()+dx);
-            setY(getX()+dy);
+            setY(getY()+dy);
             
          
         

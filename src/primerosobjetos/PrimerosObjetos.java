@@ -63,29 +63,32 @@ private Canvas miCanvas;
         lista.add(t);
       }
       private void MoverFiguras () {
-        miCanvas = new Canvas("Figuras Geometricas", 1940, 1280);
+        miCanvas = new Canvas("Figuras Geometricas", 1000,1000);
         miCanvas.setVisible(true);
         ArrayList<FiguraGeometrica> lista = new ArrayList<>();
         Random valor = new Random();
         //PONER DESTINO A CADA OBJETO
-        Rectangulo r = new Rectangulo(100., 50., Color.red, 300, 300);
+        Rectangulo r = new Rectangulo(100., 50., Color.red,valor.nextInt(1000),valor.nextInt(1000));
+        r.setDestino(valor.nextInt(1000),valor.nextInt(1000));
         lista.add(r);
-        r.setDestino(250, 350);
-        Triangulo t = new Triangulo( 100, 200, Color.green,600,300);
+        
+        Triangulo t = new Triangulo( 100, 200, Color.green,valor.nextInt(1000),valor.nextInt(1000));
         lista.add(t);
-        t.setDestino(120, 460);
-        t = new Triangulo(150,80,Color.pink,800,400);
+        t.setDestino(valor.nextInt(1000),valor.nextInt(1000));
+        t = new Triangulo(150,80,Color.pink,valor.nextInt(1000),valor.nextInt(1000));
         lista.add(t);
-        t.setDestino(690, 840);
-        t = new Triangulo(180,120,Color.black,450,320);
+        t.setDestino(valor.nextInt(1000),valor.nextInt(1000));
+        t = new Triangulo(180,120,Color.black,valor.nextInt(1000),valor.nextInt(1000));
         lista.add(t);
-        t.setDestino(350, 150);
-        r = new Rectangulo(150., 150., Color.yellow, 200, 200);
+        t.setDestino(valor.nextInt(1000),valor.nextInt(1000));
+        r = new Rectangulo(150., 150., Color.yellow,valor.nextInt(1000),valor.nextInt(1000));
+        r.setDestino(valor.nextInt(1000),valor.nextInt(1000));
         lista.add(r);
-        r.setDestino(710, 870);
-        r = new Rectangulo(50., 75., Color.blue, 100, 100);
+        
+        r = new Rectangulo(50., 75., Color.blue,valor.nextInt(1000),valor.nextInt(1000));
+        r.setDestino(valor.nextInt(1000),valor.nextInt(1000));
         lista.add(r);
-        r.setDestino(100, 100);
+        
         
            for(int i = 0 ; i < 900 ; i++){
              for (FiguraGeometrica f : lista) {
